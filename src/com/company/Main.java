@@ -2,7 +2,7 @@ package com.company;
 
 import junit.framework.Test;
 import junit.textui.TestRunner;
-
+import com.company.Tri;
 
 public class Main {
 

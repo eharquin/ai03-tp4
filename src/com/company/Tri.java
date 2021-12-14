@@ -32,11 +32,14 @@ public class Tri {
 		return(true);
 	}
 
-	private void echanger(int tableau[],int i,int j)
+	public void echanger(int tableau[],int i,int j)
 	{
-		int memoire=tableau[i];
-		tableau[i]=tableau[j];
-		tableau[j]=memoire;
+		try { // Prendre en charge les dépassements de borne afin d'éviter les défaillances liées
+			int memoire = tableau[i];
+			tableau[i] = tableau[j];
+			tableau[j] = memoire;
+		}
+		catch (java.lang.ArrayIndexOutOfBoundsException e) {}
 	}
  
         
@@ -61,7 +64,7 @@ public class Tri {
 					inversion=true;
 				}
 			}
-             		longueur--;
+			longueur--;
 		}
 		while(inversion);	
 	}
